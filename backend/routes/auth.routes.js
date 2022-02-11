@@ -6,7 +6,7 @@ const User = require("../model/User");
 const Order = require("../model/Order");
 const Furniture = require("../model/Furniture");
 const auth = require("../middleware/auth.middleware");
-//const { grantAccess } = require("../middleware/authorization.middleware");
+
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
@@ -132,7 +132,7 @@ router.post("/updateUser",
         replyTo:email,
         subject: `Email confirmation for ${firstName} ${lastName}`,
         text:`Thank you for creating a profile on our website. To confirm your profile please click the link specified
-          Link: https://kea-final-project.herokuapp.com/emailConfirmation/${confirmationHash}
+          Link: http://localhost:3000/emailConfirmation/${confirmationHash}
         `,
       };
       transporter.sendMail(mailOptions, function(error, info){
