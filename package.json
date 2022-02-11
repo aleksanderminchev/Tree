@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "server:install": "npm install --prefix backend",
+        "client:install": "npm install --prefix frontend",
+        "install": "npm run server:install && npm run client:install"
+    }
+}
+
